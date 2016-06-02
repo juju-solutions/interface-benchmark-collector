@@ -1,0 +1,4 @@
+name: benchmark-collector
+version: 0
+description: Interface to a benchmark collector
+
