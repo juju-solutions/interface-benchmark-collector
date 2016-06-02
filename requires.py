@@ -4,7 +4,7 @@ from charms.reactive import (
     hook
 )
 
-class ProvidesBenchmarkCollector(RelationBase):
+class RequiresBenchmarkCollector(RelationBase):
     scope = scopes.UNIT
     
     @hook('{requires:benchmark-collector}-relation-{joined,changed}')
