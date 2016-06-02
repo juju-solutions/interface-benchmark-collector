@@ -11,7 +11,6 @@ class ProvidesBenchmarkCollector(RelationBase):
     def changed(self):
         self.set_state('{relation_name}.connected')
     
-    
-    
-    
-    
+    @hook('{provides:benchmark-collector}-relation-{broken,departed}')
+    def departed(self):
+        self.remove_state('{relation_name}.connected')

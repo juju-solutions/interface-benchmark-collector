@@ -10,3 +10,8 @@ class RequiresBenchmarkCollector(RelationBase):
     @hook('{requires:benchmark-collector}-relation-{joined,changed}')
     def changed(self):
         self.set_state('{relation_name}.connected')
+
+    @hook('{requires:benchmark-collector}-relation-{broken,departed}')
+    def departed(self):
+        self.remove_state('{relation_name}.connected')
+        
